@@ -7,11 +7,15 @@ public class Testcase {
         this.name = name;
 
     }
-
+    public String getName() {
+        return this.name;
+    }
     public void addStacktrace(String stacktrace) {
         this.stacktrace = stacktrace;
     }
-
+    public String getStacktrace() {
+        return this.stacktrace;
+    }
 
 
 }

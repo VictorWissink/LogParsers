@@ -16,6 +16,17 @@ public class Requirement {
         tests.add(testcase);
         }
 
+    public ArrayList<Testcase> getTests() {
+        return this.tests;
+    }
+    public boolean hasTest(String name) {
+        for(Testcase test : tests) {
+            if(test.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public String getName() {
         return name;

@@ -53,7 +53,7 @@ public class Main {
 
 
             Gson gson = new Gson();
-            String jsonInString;
+
             TestRun testRun1 = gson.fromJson(fileContents1, TestRun.class);
             TestRun testRun2 = gson.fromJson(fileContents2, TestRun.class);
 

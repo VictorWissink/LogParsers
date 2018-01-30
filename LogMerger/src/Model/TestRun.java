@@ -30,15 +30,29 @@ public class TestRun {
 
 
     public void addRequirement(Requirement req) {
+        Requirement toRemove = new Requirement("");
         for (Requirement r : requirements) {
             if (r.getName().equals(req.getName())) {
-                //place the requirement back in the array if it's found
-                r = req;
-                return;
+                for(Testcase test : r.getTests()) {
+                    //check of de test met deze naam al bestaat
+                    if(!req.hasTest(test.getName())) {
 
+
+                        Testcase newTest = new Testcase(test.getName());
+                        newTest.addStacktrace(test.getStacktrace());
+
+
+                        req.addTestcase(newTest);
+
+                    }
+
+                }
+                toRemove = r;
             }
         }
-
+        if(!toRemove.getName().equals("")) {
+            requirements.remove(toRemove);
+        }
         requirements.add(req);
 
 
